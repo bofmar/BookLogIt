@@ -1,0 +1,78 @@
+/* * * * * *
+   Globals
+* * * * * * */
+
+:root{
+  --active : #98ff98;
+  --active-hover: #addfad;
+  --inactive : #ff9999;
+  --inactive-hover : #ff6961;
+  --remove-main: #e5e4e2;
+  --remove-secondary: #bebebe;
+}
+
+button{
+  all: initial;
+  text-align: center;
+}
+
+body{
+  display: flex;
+}
+
+/* * * * * *
+    Cards
+* * * * * * */
+
+.card{
+  width: 350px;
+  height: 320px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.card h2,
+.card h3,
+.card button{
+  font-size: 20px;
+  max-width: 70%;
+  text-align: center;
+  line-height: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card button{
+  width: 80%;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+}
+
+.active{
+  background-color: var(--active);
+}
+
+.active:hover,
+.active:focus{
+  background-color: var(--active-hover);
+}
+
+.inactive{
+  background-color: var(--inactive);
+}
+
+.inactive:hover,
+.inactive:focus{
+  background-color: var(--inactive-hover);
+}
+
+.remove-button{
+  background-color: var(--remove-main);
+}
+
+.remove-button:hover,
+.remove-button:focus{
+  background-color: var(--remove-secondary);
+}
