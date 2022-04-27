@@ -14,6 +14,7 @@
 button{
   all: initial;
   text-align: center;
+  cursor: pointer;
 }
 
 body{
@@ -54,8 +55,7 @@ body{
   background-color: var(--active);
 }
 
-.active:hover,
-.active:focus{
+.active:hover{
   background-color: var(--active-hover);
 }
 
@@ -63,8 +63,7 @@ body{
   background-color: var(--inactive);
 }
 
-.inactive:hover,
-.inactive:focus{
+.inactive:hover{
   background-color: var(--inactive-hover);
 }
 
@@ -72,7 +71,6 @@ body{
   background-color: var(--remove-main);
 }
 
-.remove-button:hover,
-.remove-button:focus{
+.remove-button:hover{
   background-color: var(--remove-secondary);
 }
