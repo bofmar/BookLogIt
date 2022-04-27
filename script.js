@@ -1,3 +1,5 @@
+// Selectors
+const body = document.querySelector("body");
 // Book prototype
 
 function Book(){  
@@ -29,10 +31,10 @@ function addBookToLibrary(book){
 }
 
 function displayLibrary(){
-  const body = document.querySelector("body");
-  body.innerHTML = Library.map(book =>{
+  body.textContent = "";
+  body.innerHTML = Library.map((book,i) =>{
     return `
-      <div class="card">
+      <div class="card" data-attribute=${i}>
         <h2>"${book.getTitle()}"</h2>
         <h3>${book.getAuthor()}</h3>
         <button class="${book.isRead()? "active" : "inactive"}">${book.isRead()? "Read" : "Not read"}</button>
@@ -40,6 +42,18 @@ function displayLibrary(){
       </div>    `
   }).join("");
 }
+
+// Events
+function removeItem(e){
+  if(e.target.className !== "remove-button"){
+    return;
+  }
+  const index = e.target.parentNode.dataset.attribute;
+  Library.splice(index,1);
+  displayLibrary();
+}
+
+body.addEventListener("click", removeItem); // delegate the event to the parent, since the children might not exist on page load
 
 // Tests
 
