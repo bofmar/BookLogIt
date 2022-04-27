@@ -28,6 +28,17 @@ function addBookToLibrary(book){
   Library.push(book)
 }
 
+function displayLibrary(){
+  const body = document.querySelector("body");
+  body.innerHTML = Library.map(book =>{
+    return `
+      <div>
+        ${book.getTitle()} by ${book.getAuthor()}, ${book.isRead()? "read" : "not read"}.
+      </div>
+    `
+  }).join("");
+}
+
 // Tests
 
 const b1 = Object.create(Book.prototype);
@@ -40,3 +51,5 @@ addBookToLibrary(b1);
 addBookToLibrary(b2);
 
 console.table(Library);
+
+displayLibrary();
