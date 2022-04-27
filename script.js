@@ -1,5 +1,6 @@
 // Selectors
 const body = document.querySelector("body");
+
 // Book prototype
 
 function Book(){  
@@ -21,6 +22,10 @@ Book.prototype.getAuthor = function(){
 
 Book.prototype.isRead = function(){
   return this.read;
+}
+
+Book.prototype.flipRead = function(){
+  this.read = !this.read;
 }
 
 // Library Functions
@@ -53,7 +58,27 @@ function removeItem(e){
   displayLibrary();
 }
 
-body.addEventListener("click", removeItem); // delegate the event to the parent, since the children might not exist on page load
+function changeReadState(e){
+  if(e.target.className !== "active" && e.target.className !== "inactive"){
+    return;
+  }
+  const index = e.target.parentNode.dataset.attribute;
+  Library[index].flipRead();
+  if(Library[index].isRead()){
+    e.target.classList.remove("inactive");
+    e.target.classList.add("active");
+    e.target.innerText = "Read"
+  }
+  else{
+    e.target.classList.remove("active");
+    e.target.classList.add("inactive");
+    e.target.innerText = "Not read";
+  }
+}
+
+body.addEventListener("click", removeItem); 
+body.addEventListener("click", changeReadState);
+// delegate the event to the parent, since the children might not exist on page load
 
 // Tests
 
