@@ -1,5 +1,5 @@
 // Selectors
-const body = document.querySelector("body");
+const main = document.querySelector("main");
 
 // Book prototype
 
@@ -36,8 +36,8 @@ function addBookToLibrary(book){
 }
 
 function displayLibrary(){
-  body.textContent = "";
-  body.innerHTML = Library.map((book,i) =>{
+  main.textContent = "";
+  main.innerHTML = Library.map((book,i) =>{
     return `
       <div class="card" data-attribute=${i}>
         <h2>"${book.getTitle()}"</h2>
@@ -76,8 +76,8 @@ function changeReadState(e){
   }
 }
 
-body.addEventListener("click", removeItem); 
-body.addEventListener("click", changeReadState);
+main.addEventListener("click", removeItem); 
+main.addEventListener("click", changeReadState);
 // delegate the event to the parent, since the children might not exist on page load
 
 // Tests
