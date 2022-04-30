@@ -132,7 +132,7 @@ form{
 
 dialog::backdrop{
   background-color: black;
-  opacity: 100;
+  opacity: 0.5;
 }
 
 .submit{
