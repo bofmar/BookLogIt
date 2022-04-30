@@ -1,5 +1,7 @@
 // Selectors
 const main = document.querySelector("main");
+const openButton = document.querySelector(".open-modal");
+const modal = document.querySelector(".modal");
 
 // Book prototype
 
@@ -79,6 +81,10 @@ function changeReadState(e){
 main.addEventListener("click", removeItem); 
 main.addEventListener("click", changeReadState);
 // delegate the event to the parent, since the children might not exist on page load
+
+openButton.addEventListener("click", ()=>{
+  modal.showModal();
+});
 
 // Tests
 
