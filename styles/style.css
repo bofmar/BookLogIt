@@ -31,10 +31,6 @@ a{
   cursor: pointer;
 }
 
-footer{
-  background-color: blue;
-}
-
 /* * * * * *
     Header
 * * * * * * */
@@ -156,6 +152,33 @@ section{
 .remove-button:hover{
   background-color: var(--remove-secondary);
 }
+
+/* * * * * *
+    Footer
+* * * * * * */
+
+footer{
+  background-color: var(--background-main);
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+
+.social{
+  display: flex;
+  gap: 12px;
+}
+
+.social a{
+  transition: transform 500ms ease-out;
+}
+
+.social a:hover{
+  transform: rotate(360deg);
+}
+
+
 
 /* * * * * *
     Modal
