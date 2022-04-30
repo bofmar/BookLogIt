@@ -27,6 +27,23 @@ a{
   cursor: pointer;
 }
 
+.open-modal{
+  font-size: 20px;
+  max-width: 150px;
+  text-align: center;
+  line-height: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 80%;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  background-color: var(--remove-main);
+}
+
+.open-modal:hover{
+  background-color: var(--remove-secondary);
+}
+
 /* * * * * *
     Cards
 * * * * * * */
