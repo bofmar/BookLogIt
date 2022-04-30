@@ -34,10 +34,6 @@ a{
   cursor: pointer;
 }
 
-header{
-  background-color: red;
-}
-
 footer{
   background-color: blue;
 }
@@ -58,6 +54,32 @@ footer{
 .open-modal:hover{
   background-color: var(--remove-secondary);
 }
+
+/* * * * * *
+    Header
+* * * * * * */
+
+header{
+  display: flex;
+  gap: 50vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#dark-toggle{
+  transition: transform 500ms ease-out;
+}
+
+#dark-toggle:hover{
+  transform: scale(1.2);
+}
+
 
 /* * * * * *
     Cards
