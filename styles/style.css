@@ -12,6 +12,12 @@
   --modal-background: #f0eef1;
 }
 
+body{
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 10vh 1fr 5vh;
+}
+
 button{
   all: initial;
   text-align: center;
@@ -20,11 +26,20 @@ button{
 
 main{
   display: flex;
+  background-color: orange;
 }
 
 a{
   all: initial;
   cursor: pointer;
+}
+
+header{
+  background-color: red;
+}
+
+footer{
+  background-color: blue;
 }
 
 .open-modal{
