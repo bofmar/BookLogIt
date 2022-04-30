@@ -1,9 +1,10 @@
 // Selectors
 const main = document.querySelector("main");
 const modal = document.querySelector(".modal");
+const form = document.querySelector("form");
 const openButton = document.querySelector(".open-modal");
 const closeButton = document.querySelector("#close");
-const form = document.querySelector("form");
+const submitButton = document.querySelector(".submit");
 
 // Book prototype
 
@@ -91,7 +92,24 @@ openButton.addEventListener("click", ()=>{
 closeButton.addEventListener("click", ()=>{
   form.reset();
   modal.close();
-})
+});
+
+submitButton.addEventListener("click", ()=>{
+  const title = form.querySelector("#title").value;
+  const author =form.querySelector("#author").value;
+  const read = form.querySelector("#read").checked;
+
+  if(title === "" || author === ""){
+    return
+  }
+
+  const newBook = Object.create(Book.prototype);
+  newBook.init(title,author,read);
+  addBookToLibrary(newBook);
+  displayLibrary();
+  form.reset();
+  modal.close();
+});
 
 // Tests
 
