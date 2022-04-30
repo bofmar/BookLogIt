@@ -1,7 +1,9 @@
 // Selectors
 const main = document.querySelector("main");
-const openButton = document.querySelector(".open-modal");
 const modal = document.querySelector(".modal");
+const openButton = document.querySelector(".open-modal");
+const closeButton = document.querySelector("#close");
+const form = document.querySelector("form");
 
 // Book prototype
 
@@ -85,6 +87,11 @@ main.addEventListener("click", changeReadState);
 openButton.addEventListener("click", ()=>{
   modal.showModal();
 });
+
+closeButton.addEventListener("click", ()=>{
+  form.reset();
+  modal.close();
+})
 
 // Tests
 
