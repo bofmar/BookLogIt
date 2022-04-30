@@ -51,6 +51,8 @@ function displayLibrary(){
         <button class="remove-button">Remove</button>
       </div>    `
   }).join("");
+
+  localStorage.setItem("books", JSON.stringify(Library));
 }
 
 // Events
@@ -111,17 +113,15 @@ submitButton.addEventListener("click", ()=>{
   modal.close();
 });
 
-// Tests
+(function initialState(){
+  const tempArr = JSON.parse(localStorage.getItem("books")) || [];
+  if(tempArr === []) return;
 
-const b1 = Object.create(Book.prototype);
-b1.init("The Hobbit","J.R.R. Tolkien",true);
+  tempArr.map(book => {
+    const newBook = Object.create(Book.prototype);
+    newBook.init(book.title, book.author, book.read);
+    addBookToLibrary(newBook);
+  })
 
-const b2 = Object.create(Book.prototype);
-b2.init("The Lord Of The Rings: The fellowship of the ring","J.R.R. Tolkien",false)
-
-addBookToLibrary(b1);
-addBookToLibrary(b2);
-
-console.table(Library);
-
-displayLibrary();
+  displayLibrary();
+})()
