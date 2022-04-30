@@ -1,5 +1,5 @@
 // Selectors
-const main = document.querySelector("main");
+const section = document.querySelector("section");
 const modal = document.querySelector(".modal");
 const form = document.querySelector("form");
 const openButton = document.querySelector(".open-modal");
@@ -41,8 +41,8 @@ function addBookToLibrary(book){
 }
 
 function displayLibrary(){
-  main.textContent = "";
-  main.innerHTML = Library.map((book,i) =>{
+  section.textContent = "";
+  section.innerHTML = Library.map((book,i) =>{
     return `
       <div class="card" data-attribute=${i}>
         <h2>"${book.getTitle()}"</h2>
@@ -83,8 +83,8 @@ function changeReadState(e){
   }
 }
 
-main.addEventListener("click", removeItem); 
-main.addEventListener("click", changeReadState);
+section.addEventListener("click", removeItem); 
+section.addEventListener("click", changeReadState);
 // delegate the event to the parent, since the children might not exist on page load
 
 openButton.addEventListener("click", ()=>{
