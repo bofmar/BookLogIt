@@ -1,8 +1,9 @@
 let darkMode = localStorage.getItem("darkMode");
 const darkModeButton = document.querySelector("#dark-toggle");
 
-const enableDarkMode = (e) => {
+const enableDarkMode = () => {
   document.body.classList.add("dark");
+  document.querySelector("header").classList.add("header-dark");
   localStorage.setItem("darkMode", "enabled");
 }
 

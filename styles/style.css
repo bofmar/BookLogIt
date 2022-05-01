@@ -10,22 +10,26 @@
   --remove-main: #e5e4e2;
   --remove-secondary: #bebebe;
   --modal-background: #f0eef1;
+  --banner-main: #ffffff;
   --card-primary: rgb(255, 255, 255);
   --background-main: rgb(255, 249, 239);
+  --field-background: #cfcfcf;
   --text-main: rgb(20, 20, 20);
 }
 
 .dark{
-  --active : #98ff98;
-  --active-hover: #addfad;
+  --active : #8cb4ff;
+  --active-hover: #6fa2ff;
   --inactive : #ff9999;
   --inactive-hover : #ff6961;
-  --remove-main: #e5e4e2;
-  --remove-secondary: #bebebe;
-  --modal-background: #f0eef1;
-  --card-primary: rgb(255, 255, 255);
-  --background-main: black;
-  --text-main: rgb(20, 20, 20);
+  --remove-main: #fd78bf;
+  --remove-secondary: #ff1493;
+  --modal-background: #1b1b1b;
+  --banner-main: #000000;
+  --card-primary: #343434;
+  --background-main: #1b1b1b;
+  --field-background: #4e4e4e;
+  --text-main: #e2e2e2;
 }
 
 body{
@@ -46,18 +50,28 @@ a{
   cursor: pointer;
 }
 
+svg{
+  color: var(--text-main);
+}
+
 /* * * * * *
     Header
 * * * * * * */
 
 header{
   display: flex;
+  background-color: var(--banner-main);
   gap: 50vw;
   justify-content: space-around;
   align-items: center;
   position: relative;
   z-index: 1;
   box-shadow: 0px 2px 10px 2px rgba(174,171,171,0.75);
+}
+
+.header-dark{
+  box-shadow: none;
+  border-bottom: 1px solid var(--text-main);
 }
 
 .logo{
@@ -120,12 +134,12 @@ section{
   width: 350px;
   height: 320px;
   border-radius: 10px;
-  box-shadow: 0px 0px 12px 2px rgba(174,171,171,0.5);
   background-color: var(--card-primary);
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
+  border: 1px solid var(--text-main);
 }
 
 .card h2,
@@ -203,7 +217,9 @@ footer{
   height: 30%;
   border: 0;
   background-color: var(--modal-background);
+  color: var(--text-main);
   border-radius: 20px;
+  border: 1px solid var(--text-main);
 }
 
 .modal-wrapper{
@@ -220,6 +236,11 @@ form{
   flex-direction: column;
   gap: 1.2rem;
   align-items: center;
+}
+
+input{
+  background-color: var(--field-background);
+  color: var(--text-main);
 }
 
 .modal h2{
@@ -256,6 +277,7 @@ dialog::backdrop{
 }
 
 .modal a{
+  color: var(--text-main);
   position: absolute;
   right: 20px;
   top: 10px;
