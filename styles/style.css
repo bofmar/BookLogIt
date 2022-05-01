@@ -12,12 +12,27 @@
   --modal-background: #f0eef1;
   --card-primary: rgb(255, 255, 255);
   --background-main: rgb(255, 249, 239);
+  --text-main: rgb(20, 20, 20);
+}
+
+.dark{
+  --active : #98ff98;
+  --active-hover: #addfad;
+  --inactive : #ff9999;
+  --inactive-hover : #ff6961;
+  --remove-main: #e5e4e2;
+  --remove-secondary: #bebebe;
+  --modal-background: #f0eef1;
+  --card-primary: rgb(255, 255, 255);
+  --background-main: black;
+  --text-main: rgb(20, 20, 20);
 }
 
 body{
   display: grid;
   min-height: 100vh;
   grid-template-rows: 10vh 1fr 5vh;
+  color: var(--text-main);
 }
 
 button{
@@ -177,8 +192,6 @@ footer{
 .social a:hover{
   transform: rotate(360deg);
 }
-
-
 
 /* * * * * *
     Modal
