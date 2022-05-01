@@ -9,6 +9,7 @@ const enableDarkMode = () => {
 
 const disableDarkMode = () =>{
   document.body.classList.remove("dark");
+  document.querySelector("header").classList.remove("header-dark");
   localStorage.setItem("darkMode", null);
 }
 
