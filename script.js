@@ -1,3 +1,4 @@
+// Library Module
 const library = (function(){
   const Library = [];
   
@@ -113,6 +114,7 @@ const library = (function(){
   return {addBookToLibrary};
 })();
 
+// Book Object
 function Book(title,author,read){
   this.title = title;
   this.author = author;
